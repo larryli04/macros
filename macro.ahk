@@ -8,6 +8,7 @@ Send, \rightarrow
 If (key = "left")
 Send, \leftarrow
 
+
 ;;;; Obsidian dependent
 
 
@@ -21,10 +22,73 @@ Return
 FileRead, key, C:\Users\Larry\Documents\GitHub\macros\keypressed.txt
 tippy(key)
 
+;;Streaming?
+If (key = "insert")
+Send, {F15}
+If (key = "home")
+Send, {F16}
+If (key = "pageup")
+Send, {F17}
+If (key = "delete")
+Send, {F18}
+If (key = "end")
+Send, {F19}
+If (key = "pagedown")
+Send, {F20}
 ; macros
 
 If (key = "e")
-Run, C:\Windows\explorer.exe "C:\Users\Larry"
+Run, C:\Windows\explorer.exe "C:\Users:\Larry"
+
+If (key = "q")
+Run, C:\Windows\system32\control.exe mmsys.cpl
+
+If (key = "g")
+Run, C:\Windows\explorer.exe "C:\Users\Larry\Documents\Github"
+
+If (key = "semicolon") {
+Send, :
+SendEvent, {Space}
+
+}
+
+
+If (key = "1") { ;t launch chrome with sheets tabs
+Run, chrome.exe --profile-directory="Profile 1" "https://docs.google.com/spreadsheets/d/1VFC3DvOyFSNKvYlbWvFkHcdbjtGuljkuL3Gnx_mPWSs/edit#gid=0" " --new-window "
+sleep, 100
+
+Run, chrome.exe --profile-directory="Profile 1" "https://docs.google.com/spreadsheets/d/1lIkAbxsKdR_iGFuWx-aRTtA2TtuBt9HU5uOB0WYYfZ8/edit#gid=0"
+Run, chrome.exe --profile-directory="Profile 1" "https://docs.google.com/spreadsheets/d/1pJvmPjXwtna8CP53S5oGyr6ZAn5jaJxlTftRj_WqPOI/edit#gid=0"
+}
+
+If (key = "2") { ;t launch chrome with school profile
+Run, chrome.exe --profile-directory="Profile 4" " --new-window "
+}
+
+If (key = "0") { ;t launch chrome with google classroom
+Run, chrome.exe --profile-directory="Profile 1" "https://classroom.google.com/u/0/h" " --new-window "
+}
+If (key = "9") { ;t launch chrome with sheets tabs
+Run, chrome.exe --profile-directory="Profile 1" "https://calendar.google.com/calendar/u/0/r/week" " --new-window "
+}
+
+If (key = "right") {
+Send, {Ctrl Down}
+Send, {right}
+Send, {Ctrl Up}
+}
+
+If (key = "left") {
+Send, {Ctrl Down}
+Send, {left}
+Send, {Ctrl Up}
+}
+
+If (key = "down")
+Send, {Down}
+
+If (key = "up")
+Send, {Up}
 
 If (key = "F1")
 Reload
@@ -44,7 +108,6 @@ If (key = "s") {
 	}
 }
 Return
-
 
 
 
